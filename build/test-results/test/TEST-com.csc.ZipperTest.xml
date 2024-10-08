@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.csc.ZipperTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-10-08T02:28:18" hostname="EL_TOTE1" time="0.026">
+  <properties/>
+  <testcase name="itWorks1()" classname="com.csc.ZipperTest" time="0.02"/>
+  <testcase name="itWorks2()" classname="com.csc.ZipperTest" time="0.001"/>
+  <testcase name="itWorks3()" classname="com.csc.ZipperTest" time="0.0"/>
+  <testcase name="itWorks4()" classname="com.csc.ZipperTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
