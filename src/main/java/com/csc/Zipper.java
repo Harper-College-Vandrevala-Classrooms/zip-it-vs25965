@@ -1,15 +1,13 @@
 package com.csc;
-
+import java.util.HashMap;
+import java.util.List;
 
 public class Zipper {
 
-
-
-
-public static void main(String[] args)
+public static void main(String[] args) throws SizeNotEqualException
 {
-
-
+       //driver program to manually test
+  
     Integer[] list1 = new Integer[] {1, 3, 5, 7, 9, 11, 13, 15};
     Integer[] list2 = new Integer[] {2, 4, 6, 8, 10, 12, 14, 16, 17, 18};
     Integer[] zipped = zip(list1, list2, Integer.class);
@@ -48,8 +46,18 @@ public static void main(String[] args)
     {
       System.out.print(resu[s] +  ", " );
     }
+    
+    //Using HashMap - Generic List to hashmapify method for Portfolio 2 
+    List<String> Personal = List.of("Sarah", "John", "Alex", "Monica");
+    List<Integer> Ids = List.of(123, 456, 789,765);
+    
+    System.out.println("\nHashMap of Personal and Ids: " + hashmapify(Personal,Ids) + "\n\n");
+    
 
-
+    //List with not equal size to show Exception 
+    List<String> Personal1 = List.of("Sarah", "John", "Alex");
+    List<Integer> Ids1 = List.of(123, 456, 789,765);
+    hashmapify(Personal1,Ids1);
 }
 
 public static <T> T[] zip(T[] _list1, T[] _list2, Class<T> clazz)
@@ -109,7 +117,25 @@ public static <T> T[] zip(T[] _list1, T[] _list2, Class<T> clazz)
     
 }
 
+public static HashMap<String, Integer> hashmapify (List<String> stringList, List<Integer> intList)  throws SizeNotEqualException
+{
+  HashMap<String, Integer> MapMerged = new HashMap<>();
 
+   int SListSize = stringList.size();
+   int IListSize = intList.size();
+    
+      if (SListSize != IListSize){
+        throw new SizeNotEqualException("The size of the lists are not equal");
+      }
+      
+      for (int i = 0; i < SListSize && i < IListSize; i++) {
+        MapMerged.put(stringList.get(i), intList.get(i));
+    }
+ 
+
+
+  return  MapMerged;
+}
 
 
 
